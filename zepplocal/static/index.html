@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="zl-secret" content="__SECRET__">
+<title>ZeppLocal</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span>ZeppLocal</div>
+  <nav id="nav">
+    <a href="#/overview">Overview</a>
+    <a href="#/heart">Heart</a>
+    <a href="#/sleep">Sleep</a>
+    <a href="#/activity">Activity</a>
+    <a href="#/body">Body</a>
+    <a href="#/workouts">Workouts</a>
+    <a href="#/export">Export</a>
+    <a href="#/data">Data</a>
+  </nav>
+  <div class="right">
+    <div class="ranges" id="ranges">
+      <button data-days="7">7d</button><button data-days="30">30d</button>
+      <button data-days="182">6m</button><button data-days="365">1y</button><button data-days="3650">All</button>
+    </div>
+    <button id="themeBtn" class="btn ghost" title="Theme">Auto</button>
+    <button id="syncBtn" class="primary">Sync now</button>
+  </div>
+</header>
+<div id="syncBar" class="syncbar" hidden></div>
+<main id="view"></main>
+<footer>Private · nothing on this page can contact another server</footer>
+<script src="/app.js"></script>
+</body>
+</html>

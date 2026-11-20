@@ -1,0 +1,31 @@
+[project]
+name = "zepplocal"
+version = "0.1.0"
+description = "Keep a private, local copy of your own Zepp / Amazfit health data."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# Deliberately tiny. Everything else (HTTP, SQLite, the dashboard server,
+# exports) is the Python standard library, so the code you have to audit is
+# the code in this repository.
+dependencies = [
+    "keyring>=25",      # macOS Keychain / Linux Secret Service for the token
+]
+
+[project.optional-dependencies]
+# Only needed for the in-app sign-in window. HAR import and manual entry work
+# without it.
+login = ["pywebview>=5"]
+
+[project.scripts]
+zepplocal = "zepplocal.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["zepplocal"]
